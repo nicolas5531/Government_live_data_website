@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie-edge"> <!-- PARA COMPATIBILIZAR CON TODOS LOS NAVEGADORES -->
+    <link rel="stylesheet" type="text/css" href="css/congress.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+    <title>Senate-Data</title>
+</head>
+
+<body>
+    <div class="container pt-3">
+        <header>
+            <div class="container-fluid row">
+                <div class="col-sm-7">
+                    <img class="img-fluid" src="Imagenes/LOGOTGIF__1_-removebg-preview.png">
+                </div>
+                <div class="col-sm-3">
+                    <img class="img-fluid" src="Imagenes/logosenadores.jpg">
+                </div>
+                <div class="col-sm-2 bloquemail">
+                    <a class="img-fluid mail" href="mailto:info@tgif.net"><img class="img-fluid icono" alt="icono.mail"
+                            src="Imagenes/icono mail.png"></a>
+                    <a class="img-fluid mail" href="mailto:info@tgif.net"> info@tgif.net</a>
+                </div>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Congress 113
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="house-data.html">House</a>
+                            <a class="dropdown-item" href="senate-data.html">Senate</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Attendance
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="House-Attendance-statistics.html">House</a>
+                            <a class="dropdown-item" href="Senate-Attendance-statistics.html">Senate</a>
+                        </div>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Party Loyalty
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="house-party-loyalty-starter-page.html">House</a>
+                            <a class="dropdown-item" href="senate_house-party-loyalty-starter-page.html">Senate</a>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--Table contenedor-->
+        <div class="container">
+            <div class="row">
+                <div class="informacion texto col text-white">
+                    <h2>Senators</h2>
+                    <p>First convened in 1789, the composition and powers of the Senate are established in Article One
+                        of
+                        the U.S.
+                        Constitution. Each state is represented by two senators, regardless of population, who serve
+                        staggered
+                        six-year terms. The Senate has several exclusive powers not granted to the House, including
+                        consenting to
+                        treaties as a precondition to their ratification and consenting to or confirming appointments of
+                        Cabinet
+                        secretaries, federal judges, other federal executive officials, military officers, regulatory
+                        officials,
+                        ambassadors, and other federal uniformed officers, as well as trial of federal officials
+                        impeached
+                        by the
+                        House.
+                    </p>
+                </div>
+            </div>
+            <div id="app" class="row">
+                <div class=" col">
+                    <div class="table-responsive">
+                        <table id="table" class="table table-striped table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Name </th>
+                                    <th>
+                                        Party
+                                        <select id="select" v-model="partidos" v-on:change="filterByParty">
+                                            <option id="select" value="R">Republican</option>
+                                            <option value="D">Democrat</option>
+                                            <option value="ID">Independent</option>
+                                            <option value="all">All</option>
+                                        </select>
+                                    </th>
+                                    <th>State</th>
+                                    <th>
+                                        Years in Office
+                                        <button id="select" class="ml-2" v-on:click="ordenar2(false)">↑</button>
+                                        <button class="ml-2" id="select" v-on:click="ordenar2(true)">↓</button> 
+                                    </th>
+                                    <th>
+                                        % Votes w/Party
+                                        <button id="select" class="ml-2" v-on:click="ordenar(false)">↑</button>
+                                        <button class="ml-2" id="select" v-on:click="ordenar(true)">↓</button> 
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="value in filterAndMemb">
+                                    <td> <a v-bind:href="value.url">{{value.first_name}} {{value.middle_name}} {{value.last_name}}</a></td>
+                                    <td>{{value.party}}</td>
+                                    <td>{{value.state}}</td>
+                                    <td>{{value.seniority}}</td>
+                                    <td>{{value.votes_with_party_pct}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!--Instalo VUE -->
+        <script src="javascript/estadisticas-att.js"></script>
+        <!--SCRIPTS PARA QUE BOOSTRAP FUNCIONE-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </div>
+    <div class="container-fluid">
+        <footer>
+            <span class="blockquote-footer pie">© 2020 TGIF | All Rights Reserved</span>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+#select {
+  color: rgb(255, 255, 255);
+  background-color: #343a40;
+  border-color: rgb(118, 118, 118);
+  
+}
+#cuerphome {
+  background-size: cover;
+  background-attachment: fixed;
+}
+.card-body{
+  background-color: rgba(255, 255, 255, 0.246);
+  color: rgb(0, 0, 0);
+}
+
+body {
+  background-image: url(../Imagenes/new-fondo1lateral.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  color: aliceblue;
+}
+
+a:hover {
+  color: rgb(60, 146, 10);
+}
+
+.dropdown-menu{
+  background-color: rgba(196, 196, 200, 0.685);
+}
+
+.navbar{
+  background-color: rgba(196, 196, 200, 0.554);
+  color: wheat;
+  border-radius: 15px;
+  height: ;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.329);
+}
+
+/*Footer*/
+.pie {
+  text-align: center;
+  font-size: medium;
+  background-color: rgba(104, 101, 101, 0.219);
+  color: rgba(0, 0, 0, 0.507);
+  padding: 10px;
+}
+
+/*TABLA*/
+.table {
+  text-align: center;
+  color: white;
+}
+#table {
+  color: white;
+}
+
+/*mail*/
+.mail {
+  color: inherit;
+  color: rgb(141, 5, 5);
+  text-decoration: none;
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.mail:hover {
+  color: rgb(13, 251, 0);
+}
+
+.bloquemail {
+  margin-top: 10%;
+}
+
+.icono {
+  width: 30%;
+}
+
+.fondobandera {
+  position: absolute;
+  opacity: 0.5;
+  z-index: -1;
+  width: 50%;
+  margin-top: 50%;
+  margin-left: 15%;
+}
+
+.container {
+  margin-top: 10%;
+}
+
+.btnsen {
+  position: absolute;
+  left: 20%;
+  top: 28.5%;
+}
+
+.btnhou {
+  position: absolute;
+  right: 20%;
+  top: 30%;
+}
+
+.btncon {
+  position: absolute;
+  top: 60%;
+  left: 30%;
+}

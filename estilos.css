@@ -1,0 +1,94 @@
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+    }
+
+body{
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+
+}
+body, html{height: 100vh;}
+
+
+
+
+
+
+
+.boton{position: absolute;  height: 90vh; left: 50%; top: 50%; transform: translate(-50%);top: 50%;
+    transform: translate(-50%, -50%); cursor: pointer; display: flex; justify-content: center; align-items: center; z-index: 99; }
+
+    .boton:hover img{transition: all .1s ease-in-out; scale: (1);}
+    .boton:hover img{transform: scale(1.02);}
+
+.fondo{
+        width: 100vw;
+        height: 100vh;        
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1{
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        text-transform: uppercase;
+        font-weight: normal;
+        line-height-step: 1em;
+        font-size: 50px;
+        
+    }
+
+img.cerdoman{
+    width:auto;    
+    max-height: 100%;
+}
+
+.frases{
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    z-index: 0;
+    display: inline-flex;
+    flex-direction: column;    
+    width: 700px;
+}
+
+
+
+.frase1{margin-top: 20px; width: 500px ;}
+.frase2{margin-top: 20px; width: 700px ; display: none;}
+.frase2.show{margin-top: 20px; width: 700px ; display: block;}
+
+@media screen and (max-width:768px){
+    .fondo{
+        background-size: cover;
+    }
+}
+
+
+
+p{margin:0;}
+p a{color: #fff; text-decoration: none;}
+p a:hover{color: #000;}
+.logoaxa{width: 50px; filter: brightness(100);}
+.t-l,
+.t-r,
+.b-r{    position: absolute; padding: 15px;}
+.t-l {top: 0; left: 0;}
+.t-r {top: 0; right:0;}
+.b-r {bottom: 0; right:0;}
